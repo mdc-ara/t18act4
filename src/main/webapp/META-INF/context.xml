@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/t18act4"/>
+<Context path="/t18act4">
+    <Resource name="jdbc/HeladeriaDB"          auth="Container"
+          type="javax.sql.DataSource"
+          maxTotal="100"
+          maxIdle="30"
+          maxWaitMillis="10000"
+          username="simone"
+          password="B0n1N1"
+          driverClassName="com.mysql.cj.jdbc.Driver"
+          url="jdbc:mysql://localhost:3306/heladeria"/>
+</Context>

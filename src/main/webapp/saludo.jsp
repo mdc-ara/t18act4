@@ -23,5 +23,9 @@
     String fechaFormateada = formateador.format(ahora);
     %>
     <p>Hoy es <%= fechaFormateada %></p>
+    <p>Menú:</p>
+    <ul>
+        <li> <a href="listarSabores.jsp">Listar Sabores</a><br> </li>
+    </ul>
 </body>
 </html>

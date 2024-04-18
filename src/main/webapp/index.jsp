@@ -12,7 +12,7 @@
         <title><%= pageName %></title>
     </head>
     <body>
-        <h1>Heladería Carap <%= pageName %></h1>
+        <h1>${initParam.webTitle}: <%= pageName %></h1>
         <p>Bienvenido a mi aplicación web de gestión de la Heladería Carap.</p>
     
         <form action="saludo.jsp" method="post">

@@ -2,8 +2,28 @@
 <web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
     <context-param>
         <param-name>webTitle</param-name>
-        <param-value>Heladería Italiana Carap</param-value>
+        <param-value>Heladería Carap</param-value>
     </context-param>
+    <servlet>
+        <servlet-name>SaborServlet</servlet-name>
+        <servlet-class>es.medac.t18act4.SaborServlet</servlet-class>
+        <init-param>
+            <param-name>action</param-name>
+            <param-value/>
+        </init-param>
+        <init-param>
+            <param-name>sabor</param-name>
+            <param-value/>
+        </init-param>
+        <init-param>
+            <param-name>precio</param-name>
+            <param-value/>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SaborServlet</servlet-name>
+        <url-pattern>/SaborServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

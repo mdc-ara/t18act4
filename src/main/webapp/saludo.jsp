@@ -26,6 +26,7 @@
     <p>Menú:</p>
     <ul>
         <li> <a href="listarSabores.jsp">Listar Sabores</a><br> </li>
+        <li> <a href="agregarSabor.jsp">Agregar Sabor</a><br> </li>
     </ul>
 </body>
 </html>

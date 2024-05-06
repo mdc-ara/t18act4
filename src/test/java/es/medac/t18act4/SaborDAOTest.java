@@ -78,7 +78,7 @@ public class SaborDAOTest {
     }
     @Test
     public void testActualizarSabor() throws SQLException {
-                // Crear mocks
+        // Crear mocks
         mockDataSource = mock(DataSource.class);
         mockConnection = mock(Connection.class);
         mockPreparedStatement = mock(PreparedStatement.class);
@@ -100,6 +100,31 @@ public class SaborDAOTest {
         verify(mockPreparedStatement, times(1)).setString(1, nuevoSabor);
         verify(mockPreparedStatement, times(1)).setDouble(2, nuevoPrecio);
         verify(mockPreparedStatement, times(1)).setInt(3, id);
+        verify(mockPreparedStatement, times(1)).executeUpdate();
+
+        verify(mockPreparedStatement, times(1)).close();
+        verify(mockConnection, times(1)).close();
+    }
+    @Test
+    public void testEliminarSabor() throws SQLException {
+        // Crear mocks
+        mockDataSource = mock(DataSource.class);
+        mockConnection = mock(Connection.class);
+        mockPreparedStatement = mock(PreparedStatement.class);
+        mockResultSet = mock(ResultSet.class);
+
+        // Configurar el comportamiento común de los mocks
+        when(mockDataSource.getConnection()).thenReturn(mockConnection);
+        when(mockConnection.prepareStatement(anyString())).thenReturn(mockPreparedStatement);
+        
+        // Inyección del mock DataSource en SaborDAO
+        saborDAO = new SaborDAO(mockDataSource);
+        
+        int id = 1;
+
+        saborDAO.eliminarSabor(id);
+
+        verify(mockPreparedStatement, times(1)).setInt(1, id);
         verify(mockPreparedStatement, times(1)).executeUpdate();
 
         verify(mockPreparedStatement, times(1)).close();

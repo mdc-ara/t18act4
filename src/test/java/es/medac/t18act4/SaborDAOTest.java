@@ -75,6 +75,9 @@ public class SaborDAOTest {
         // Aserciones de Junit
         assertNotNull(sabores, "La lista de sabores no debería ser nula");
         assertEquals(2, sabores.size(), "Debería haber dos sabores en la lista");
+        
+        verify(mockPreparedStatement, times(1)).close();
+        verify(mockConnection, times(1)).close();
     }
     @Test
     public void testActualizarSabor() throws SQLException {
@@ -130,6 +133,4 @@ public class SaborDAOTest {
         verify(mockPreparedStatement, times(1)).close();
         verify(mockConnection, times(1)).close();
     }
-    
-    
 }

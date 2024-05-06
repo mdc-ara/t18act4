@@ -22,6 +22,10 @@ public class SaborDAO {
             e.printStackTrace();
         }
     }
+    public SaborDAO(DataSource ds){
+        dataSource = ds;
+    }
+    
     public List<Sabor> listarSabores() {
         List<Sabor> sabores = new ArrayList<>();
         try {
